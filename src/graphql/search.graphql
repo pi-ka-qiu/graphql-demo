@@ -1,0 +1,5 @@
+query searchR ($keyword: String!) {
+    search (query: $keyword , type: REPOSITORY){
+        userCount
+    }
+}
