@@ -6,11 +6,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "apollo-boost": "^0.1.10",
     "apollo-cache-inmemory": "^1.2.5",
     "apollo-client": "^2.3.5",
     "apollo-link": "^1.2.2",

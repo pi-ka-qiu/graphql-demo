@@ -3,11 +3,13 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HttpLink } from 'apollo-link-http'
 import { onError } from 'apollo-link-error'
 import { ApolloLink, from } from 'apollo-link'
-const token = '598ffa46592d1c7f57ccf8173e47290c6db0d549'
+
+const token = '3ed87fc69a30df8144970fecebd868bb33412379'
 
 const Middleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers
   console.log('Middleware', operation, forward)
+  return forward(operation)
 })
 const Afterware = new ApolloLink((operation, forward) => {
   return forward(operation).map(response => {

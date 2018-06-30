@@ -1,5 +1,28 @@
-query searchR ($keyword: String!) {
-    search (query: $keyword , type: REPOSITORY){
-        userCount
+query searchR ($keyword: String!, $first: Int,$last: Int, $after: String, $before: String) {
+    search (query: $keyword , first: $first, last: $last , after: $after,before: $before, type: REPOSITORY){
+        nodes {
+            ... on Repository{
+                name
+                nameWithOwner
+                projectsUrl
+                createdAt
+                updatedAt
+                description
+                forkCount
+                licenseInfo{
+                    name
+                }
+                owner{
+                    avatarUrl
+                }
+            }
+        }
+        pageInfo{
+            startCursor
+            endCursor
+            hasPreviousPage
+            hasNextPage
+        }
+        repositoryCount
     }
 }
