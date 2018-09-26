@@ -49,7 +49,7 @@ apollo client对于web 框架都有具体的实现，但是我更希望能像axi
 │   ├── App.vue
 │   ├── graphql                            // 接口
 │   │   ├── search.graphql
-│   │   └── search.js
+│   │   └── index.js                       // export所有接口
 │   ├── main.js
 │   └── utils
 │       └── graphql.js                    // 对Apollo-client封装

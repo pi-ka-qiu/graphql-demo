@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http'
 import { onError } from 'apollo-link-error'
 import { ApolloLink, from } from 'apollo-link'
 
-const token = '3ed87fc69a30df8144970fecebd868bb33412379'
+const token = 'e9eff164a2a27c28ad1d9a64201160078b3f66fe'
 
 const Middleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers

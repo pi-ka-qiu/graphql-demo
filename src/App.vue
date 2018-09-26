@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div>
+   <!-- <div>
       <label>token</label><input v-model="token"/>
-    </div>
+    </div>-->
     <div>
       <input v-model="keyword" @keyup.enter="search(keyword)">
       <button @click="search(keyword)">搜索</button>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import {search} from './graphql/search.js'
+import {search} from './graphql/index.js'
 export default {
   name: 'app',
   data () {
