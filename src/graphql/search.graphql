@@ -3,8 +3,10 @@ query search ($keyword: String!, $first: Int,$last: Int, $after: String, $before
         nodes {
             ... on Repository{
                 name
+                url
                 nameWithOwner
                 projectsUrl
+                homepageUrl
                 createdAt
                 updatedAt
                 description

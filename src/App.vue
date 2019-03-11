@@ -11,7 +11,7 @@
       <div class="repository" v-if="repository"
            v-for="(item, index) in repository" :key="index">
         <div>
-          <a class="repository__name" :href="item.projectsUrl">{{item.nameWithOwner}}</a>
+          <a class="repository__name" :href="item.url">{{item.nameWithOwner}}</a>
         </div>
         <div class="repository__desc">{{item.description}}</div>
         <div>
