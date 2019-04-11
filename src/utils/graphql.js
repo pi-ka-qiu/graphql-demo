@@ -28,13 +28,26 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 });
 
 const httpLink = new HttpLink({
-  uri: 'https://api.github.com/graphql',
-  headers: {
+  uri: 'https://api.github.com/graphql', // 配置请求url
+  headers: {                             // 配置header
     Authorization: `Bearer ${token}`
   }
 })
-const cache = new InMemoryCache()
+const cache = new InMemoryCache() // 缓存
 export default new ApolloClient({
   link: from([Middleware, Afterware, errorLink, httpLink]),
-  cache
+  cache,
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: 'cache-and-network',
+      errorPolicy: 'ignore',
+    },
+    query: {
+      fetchPolicy: 'network-only',
+      errorPolicy: 'all',
+    },
+    mutate: {
+      errorPolicy: 'all'
+    }
+  }
 })
